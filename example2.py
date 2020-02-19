@@ -28,7 +28,7 @@ def move(my_history, their_history, my_score, their_score):
     
 def Stra_pt2(my_history, their_history, my_score, their_score):
   '''Betrays on the last two rounds'''
-  if len(my_history) == 9 or len(my_history) == 10:
+  if len(my_history) == 8 or len(my_history) == 9:
     return 'b'
   else:
     return 'c'

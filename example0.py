@@ -23,4 +23,18 @@ def move(my_history, their_history, my_score, their_score):
     
     # This player always colludes.
     return 'c'
-    
+
+import random
+
+def Our_function(my_history, their_history, my_score, their_score):
+  ''' That it will be a function where it will check if it is the first round it will conclude. The last few rounds of games, it will betray, if it is false, then it will see if the other person betrayed last time, if it is false, then it will do a coin flip to see if it will betray or conclude. They all return betray except the coin flip and at the beginning.'''
+  if len(my_history) == 9 or len(my_history) == 10:
+    return 'b'
+  elif my_history[-1]=='c' and their_history[-1]=='b':
+    return 'b' 
+  else:
+    choice == random.randint(1, 2)
+    if choice == 1:
+      return 'c'
+    elif choice == 2:
+      return 'b'

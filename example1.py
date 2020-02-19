@@ -23,3 +23,13 @@ def move(my_history, their_history, my_score, their_score):
     
     #This example player always betrays.      
     return 'b'
+
+import random
+
+def Stra_pt1(my_history, their_history, my_score, their_score):
+  '''50% chance to put a c and 50% chance to put a b'''
+  choice == random.randint(1, 2)
+    if choice == 1:
+      return 'c'
+    elif choice == 2:
+      return 'b'

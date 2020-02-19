@@ -15,19 +15,19 @@ Section 1 - Player vs. Player
 --------------------------------------------------------------------------------
 Each column shows pts//round earned against each other player:
              P0     P1     P2     P3
-vs. P0 :      0   -250   -257   -253
+vs. P0 :      0   -250   -252   -253
 vs. P1 :   -250      0   -250   -250
-vs. P2 :   -242   -250      0      0
-vs. P3 :   -246   -250      0      0
-TOTAL  :   -738   -750   -507   -503
+vs. P2 :   -248   -250      0     -6
+vs. P3 :   -246   -250     -2      0
+TOTAL  :   -744   -750   -504   -509
 --------------------------------------------------------------------------------
 Section 2 - Leaderboard
 --------------------------------------------------------------------------------
 Average points per round:
 Team name (P#):  Score      with strategy name
-E3        (P3):       -126 points with Collude but retaliate                   
-E2        (P2):       -127 points with Alternate                               
-E0        (P0):       -185 points with Collude                                 
+E2        (P2):       -126 points with Alternate                               
+E3        (P3):       -128 points with Collude but retaliate                   
+E0        (P0):       -186 points with Collude                                 
 E1        (P1):       -188 points with Betray                                  
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
@@ -101,7 +101,7 @@ strategy_description = 'Collude, then alternate.'
 def move(my_history, their_history, my_score, their_score):
   '''Betrays on the last two rounds'''
   if len(my_history) == 8 or len(my_history) == 9:
-    return 'c'
+    return 'b'
   else:
     return 'c'--------------------------------------------------------------------------------
 example3--------------------------------------------------------------------------------
@@ -134,17 +134,23 @@ Section 3 - Game Data for Team E0
 b       bb                                                                      
                                                                                 
 
-                                                                              
-                                                                              
+                                                                                
+                                                                                
+
+                 
+                 
 
 --------------------------------------------------------------------------------
--242 pt//round: E0(P0) "Collude"
--257 pt//ound: E2(P2) "Alternate"
-B       BB                                                                      
+-248 pt//round: E0(P0) "Collude"
+-252 pt//ound: E2(P2) "Alternate"
+B       bb                                                                      
+ccccccccbbcccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc
+
+                                                                                
 cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc
 
-                                            
-cccccccccccccccccccccccccccccccccccccccccccc
+        
+cccccccc
 
 --------------------------------------------------------------------------------
 -246 pt//round: E0(P0) "Collude"
@@ -155,8 +161,8 @@ cbcccccccbcccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc
                                                                                 
 cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc
 
-          
-cccccccccc
+              
+cccccccccccccc
 
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
@@ -167,17 +173,20 @@ Section 3 - Game Data for Team E1
                                                                                 
 b       bb                                                                      
 
-                                                                              
-                                                                              
+                                                                                
+                                                                                
+
+                 
+                 
 
 --------------------------------------------------------------------------------
 -250 pt//round: E1(P1) "Betray"
 -250 pt//ound: E2(P2) "Alternate"
                                                                                 
-cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc
+ccccccccbbcccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc
 
-                                                                
-cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc
+                                     
+ccccccccccccccccccccccccccccccccccccc
 
 --------------------------------------------------------------------------------
 -250 pt//round: E1(P1) "Betray"
@@ -185,38 +194,44 @@ cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc
                                                                                 
 cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc
 
-                                        
-cccccccccccccccccccccccccccccccccccccccc
+                                                                                
+cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc
+
+                    
+cccccccccccccccccccc
 
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
 Section 3 - Game Data for Team E2
 --------------------------------------------------------------------------------
--257 pt//round: E2(P2) "Alternate"
--242 pt//ound: E0(P0) "Collude"
-cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc
-B       BB                                                                      
+-252 pt//round: E2(P2) "Alternate"
+-248 pt//ound: E0(P0) "Collude"
+ccccccccbbcccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc
+B       bb                                                                      
 
-cccccccccccccccccccccccccccccccccccccccccccc
-                                            
+cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc
+                                                                                
+
+cccccccc
+        
 
 --------------------------------------------------------------------------------
 -250 pt//round: E2(P2) "Alternate"
 -250 pt//ound: E1(P1) "Betray"
-cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc
+ccccccccbbcccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc
                                                                                 
 
-cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc
-                                                                
+ccccccccccccccccccccccccccccccccccccc
+                                     
 
 --------------------------------------------------------------------------------
-0 pt//round: E2(P2) "Alternate"
-0 pt//ound: E3(P3) "Collude but retaliate"
-CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
-CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+-2 pt//round: E2(P2) "Alternate"
+-6 pt//ound: E3(P3) "Collude but retaliate"
+CCCCCCCCBbCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+CCCCCCCCcbCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
 
-CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
-CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
 
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
@@ -230,8 +245,8 @@ B       Bb
 cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc
                                                                                 
 
-cccccccccc
-          
+cccccccccccccc
+              
 
 --------------------------------------------------------------------------------
 -250 pt//round: E3(P3) "Collude but retaliate"
@@ -239,16 +254,19 @@ cccccccccc
 cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc
                                                                                 
 
-cccccccccccccccccccccccccccccccccccccccc
-                                        
+cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc
+                                                                                
+
+cccccccccccccccccccc
+                    
 
 --------------------------------------------------------------------------------
-0 pt//round: E3(P3) "Collude but retaliate"
-0 pt//ound: E2(P2) "Alternate"
-CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
-CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+-6 pt//round: E3(P3) "Collude but retaliate"
+-2 pt//ound: E2(P2) "Alternate"
+CCCCCCCCcbCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+CCCCCCCCBbCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
 
-CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
-CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
 
 --------------------------------------------------------------------------------
